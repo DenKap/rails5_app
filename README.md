@@ -1,15 +1,12 @@
 # rails 5.0.2 app
 
-Sample rails app for managing and display data.
+ Sample rails app for managing and display data.
 
 * Ruby 2.4.0
 
 * Rails 5.0.2
 
-* PostgreSQL
-__________________________________________________
-
-Basic information:
+# Basic information:
 
 * Login through omniauth: Facebook, Twitter
 
@@ -19,10 +16,9 @@ Basic information:
 
 * Bootstrap (basic views) for frontend
 
-* JQuery
-__________________________________________________
+* jQuery
 
-Testing:
+# Testing:
 
 * RSpec
 
