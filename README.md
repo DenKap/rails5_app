@@ -1,24 +1,33 @@
-# README
+# rails 5.0.2 app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample rails app for managing and display data.
 
-Things you may want to cover:
+* Ruby 2.4.0
 
-* Ruby version
+* Rails 5.0.2
 
-* System dependencies
+* PostgreSQL
+__________________________________________________
 
-* Configuration
+Basic information:
 
-* Database creation
+* Login through omniauth: Facebook, Twitter
 
-* Database initialization
+* Google Maps API - geocoder gem
 
-* How to run the test suite
+* File upload with paperclip gem
 
-* Services (job queues, cache servers, search engines, etc.)
+* Bootstrap (basic views) for frontend
 
-* Deployment instructions
+* JQuery
+__________________________________________________
 
-* ...
+Testing:
+
+* RSpec
+
+* Factrory Girl
+
+* Shoulda Matchers
+
+All the rest is inside.
