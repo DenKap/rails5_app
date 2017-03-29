@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Challenge</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="//maps.google.com/maps/api/js?key=AIzaSyDIAYV2nNwtyNK0qFL4uSa52kZl0OFoyc0"></script>
+  <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <%=render 'layouts/partials/flash_messages' %>
+  <%=render 'layouts/partials/header' %>
+  <%= yield %>
+</body>
+</html>

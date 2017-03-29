@@ -1,0 +1,46 @@
+<div class="container">
+  <%= render partial: 'layouts/partials/form_error_messages', locals: { object: @property } %>
+
+  <div class=".centered-wide-form">
+    <h3>*Description:</h3>
+    <p class="label"><%=f.label :description, "*Description:" %></p>
+    <p><%=f.text_area :description, rows: 6 %></p>
+
+    <h3>*Key Features:</h3>
+    <p class="label"><%=f.label :key_features, "*Key Features:" %></p>
+    <p><%=f.text_area :key_features, rows: 6 %></p>
+
+    <h3>Floor Plan:</h3>
+    <p class="label"><%=f.label :floor_plan, 'Floor Plan:' %></p>
+    <% unless @property.new_record? && @property.floor_plan.url.present? %>
+        <p><%= image_tag @property.floor_plan.url, style: 'max-width: 400px' %></p>
+    <% end %>
+    <p><%=f.file_field :floor_plan %></p>
+
+    <h3>Location: <small>(for ex. Khreschatyk, Kiev, Ukraine)</small></h3>
+    <p class="label"><%= f.label :address, 'Address' %></p>
+    <p><%= f.text_field :address, rows: 3 %></p>
+
+    <h3>Photos</h3>
+    <% if @property.property_images.present? %>
+      <p class="label">Current Photos:</p>
+      <div class="current-photos">
+        <% @property.property_images.each do |pic| %>
+          <p>
+            <%=image_tag pic.image.url %><br />
+              <button type="button" class="btn btn-danger btn-sm"><%=link_to 'Delete', property_image_path(pic), method: :delete %></button>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+    <p class="label">Add Photos:</p>
+    <div class="property-photos">
+      <p><%=file_field_tag "properties_photos[]", id: nil %></p>
+    </div>
+    <p><a href="#" id="add-more-photos">+ add more photos</a></p>
+
+    <div id="map"></div>
+    <%=f.hidden_field :latitude %>
+    <%=f.hidden_field :longitude %>
+  </div>
+</div>
